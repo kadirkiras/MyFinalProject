@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Runtime.InteropServices.ComTypes;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace DataAccess.Concrete.InMemory
 {
@@ -55,6 +56,11 @@ namespace DataAccess.Concrete.InMemory
             // LINQ - Language Integrated Query
             var productToDelete = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
             _products.Remove(productToDelete);
+        }
+
+        public List<ProductDetailDto> GetProductDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public List<Product> GelAllByCategory(int categoryId)
